@@ -5,7 +5,54 @@ const port = 5000;
 
 mongoose.connect('mongodb+srv://lovekeshthakur33:CKvq2bLmlzNrb5VB@black.mycowep.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true });
 
-const DataSchema = new mongoose.Schema({/* your schema definition */});
+const DataSchema = new mongoose.Schema({
+    year: {
+        type : Number,
+        required : true,
+
+    },
+    topic: {
+        type : String,
+        required : true,
+        
+    }
+    ,
+    sector: {
+        type : String,
+        required : true,
+        
+    },
+    region: {
+        type : String,
+        required : true,
+
+    } ,
+    pest:  {
+        type : String,
+        required : true,
+
+    },
+    source:  {
+        type : String,
+        required : true,
+
+    },
+    swot:  {
+        type : String,
+        required : true,
+
+    },
+    country:  {
+        type : String,
+        required : true,
+
+    },
+    city:  {
+        type : String,
+        required : true,
+
+    }
+});
 const Data = mongoose.model('Data', DataSchema);
 
 app.get('/api/data', async (req, res) => {
